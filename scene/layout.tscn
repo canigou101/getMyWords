@@ -1,0 +1,73 @@
+[gd_scene format=3 uid="uid://v2eb5kxog0eq"]
+
+[node name="layout" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 400
+alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="colonneBoutique" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="boutique" type="Label" parent="HBoxContainer/colonneBoutique"]
+layout_mode = 2
+text = "boutique"
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="HBoxContainer/colonneBoutique"]
+layout_mode = 2
+
+[node name="colonneMain" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_stretch_ratio = 0.0
+alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="main" type="Label" parent="HBoxContainer/colonneMain"]
+layout_mode = 2
+text = "puit de lettres "
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="HBoxContainer/colonneMain"]
+layout_mode = 2
+
+[node name="colonneStats" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="HBoxContainer/colonneStats"]
+layout_mode = 2
+text = "stats"
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="HBoxContainer/colonneStats"]
+layout_mode = 2
+
+[node name="points lettres" type="Label" parent="HBoxContainer/colonneStats"]
+layout_mode = 2
+
+[node name="HSeparator2" type="HSeparator" parent="HBoxContainer/colonneStats"]
+layout_mode = 2
+
+[node name="tempsDeJeu" type="Label" parent="HBoxContainer/colonneStats"]
+layout_mode = 2

@@ -1,5 +1,3 @@
 [gd_scene format=3 uid="uid://b7o8a1uaqg5u4"]
 
 [node name="GamePage" type="Node2D"]
-
-[node name="Timer" type="Timer" parent="."]

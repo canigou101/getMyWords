@@ -44,12 +44,20 @@ alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="colonneBoutique" parent="VBoxContainer/HBoxContainer" instance=ExtResource("1_gtb00")]
+unique_name_in_owner = true
 layout_mode = 2
 
 [node name="colonneMain" parent="VBoxContainer/HBoxContainer" instance=ExtResource("2_gvdl5")]
+unique_name_in_owner = true
 layout_mode = 2
 
 [node name="colonneStats" parent="VBoxContainer/HBoxContainer" instance=ExtResource("3_68w0p")]
 layout_mode = 2
 
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="liste" from="VBoxContainer/HBoxContainer/colonneBoutique" to="." method="_on_colonne_boutique_liste"]
+[connection signal="prixMinus" from="VBoxContainer/HBoxContainer/colonneBoutique" to="." method="_on_colonne_boutique_prix_minus"]
 [connection signal="isPress" from="VBoxContainer/HBoxContainer/colonneMain" to="." method="_on_colonne_main_is_press"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -5,7 +5,8 @@ signal estBuyPeint(prix)
 var argent=0
 var prix=5
 
-func pasDargent():
+func pasDargent(arg):
+	argent=arg
 	if argent<prix:
 		$Button.disabled=true
 	elif argent>=prix:
@@ -20,5 +21,3 @@ func _on_button_pressed():
 	prix=int(prix*1.5)
 	
 	
-func _process(delta):
-	pasDargent()

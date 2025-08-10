@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://v2eb5kxog0eq"]
+[gd_scene load_steps=5 format=3 uid="uid://v2eb5kxog0eq"]
 
 [ext_resource type="Script" uid="uid://bn5qm301cnlaq" path="res://script/layout.gd" id="1_0aoxk"]
+[ext_resource type="PackedScene" uid="uid://csxmep2uiwr1" path="res://scene/colonne_boutique.tscn" id="1_gtb00"]
+[ext_resource type="PackedScene" uid="uid://bxgijcb6xhknj" path="res://scene/colonne_main.tscn" id="2_gvdl5"]
+[ext_resource type="PackedScene" uid="uid://dagvvcvu546n8" path="res://scene/colonne_stats.tscn" id="3_68w0p"]
 
 [node name="layout" type="Control"]
 layout_mode = 3
@@ -9,6 +12,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_0aoxk")
 metadata/_edit_use_anchors_ = true
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
@@ -35,69 +39,17 @@ text = "Get Back my words"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
 layout_mode = 2
-theme_override_constants/separation = 400
+theme_override_constants/separation = 200
 alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="colonneBoutique" type="VBoxContainer" parent="VBoxContainer/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 4
-alignment = 1
-metadata/_edit_use_anchors_ = true
-
-[node name="boutique" type="Label" parent="VBoxContainer/HBoxContainer/colonneBoutique"]
-layout_mode = 2
-text = "boutique"
-horizontal_alignment = 1
-
-[node name="HSeparator" type="HSeparator" parent="VBoxContainer/HBoxContainer/colonneBoutique"]
+[node name="colonneBoutique" parent="VBoxContainer/HBoxContainer" instance=ExtResource("1_gtb00")]
 layout_mode = 2
 
-[node name="objets" type="VBoxContainer" parent="VBoxContainer/HBoxContainer/colonneBoutique"]
-layout_mode = 2
-script = ExtResource("1_0aoxk")
-
-[node name="colonneMain" type="VBoxContainer" parent="VBoxContainer/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_stretch_ratio = 0.0
-alignment = 1
-metadata/_edit_use_anchors_ = true
-
-[node name="main" type="Label" parent="VBoxContainer/HBoxContainer/colonneMain"]
-layout_mode = 2
-text = "puit de lettres "
-horizontal_alignment = 1
-
-[node name="HSeparator" type="HSeparator" parent="VBoxContainer/HBoxContainer/colonneMain"]
+[node name="colonneMain" parent="VBoxContainer/HBoxContainer" instance=ExtResource("2_gvdl5")]
 layout_mode = 2
 
-[node name="pointsLettres" type="Label" parent="VBoxContainer/HBoxContainer/colonneMain"]
-unique_name_in_owner = true
+[node name="colonneStats" parent="VBoxContainer/HBoxContainer" instance=ExtResource("3_68w0p")]
 layout_mode = 2
 
-[node name="HSeparator2" type="HSeparator" parent="VBoxContainer/HBoxContainer/colonneMain"]
-layout_mode = 2
-
-[node name="Button" type="Button" parent="VBoxContainer/HBoxContainer/colonneMain"]
-layout_mode = 2
-text = "roll"
-
-[node name="colonneStats" type="VBoxContainer" parent="VBoxContainer/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 4
-alignment = 1
-metadata/_edit_use_anchors_ = true
-
-[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer/colonneStats"]
-layout_mode = 2
-text = "stats"
-horizontal_alignment = 1
-
-[node name="HSeparator" type="HSeparator" parent="VBoxContainer/HBoxContainer/colonneStats"]
-layout_mode = 2
-
-[node name="tempsDeJeu" type="Label" parent="VBoxContainer/HBoxContainer/colonneStats"]
-layout_mode = 2
-
-[connection signal="pressed" from="VBoxContainer/HBoxContainer/colonneMain/Button" to="VBoxContainer/HBoxContainer/colonneBoutique/objets" method="_on_button_pressed"]
+[connection signal="isPress" from="VBoxContainer/HBoxContainer/colonneMain" to="." method="_on_colonne_main_is_press"]

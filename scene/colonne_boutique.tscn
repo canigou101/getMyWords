@@ -1,0 +1,73 @@
+[gd_scene load_steps=10 format=3 uid="uid://csxmep2uiwr1"]
+
+[ext_resource type="Script" uid="uid://ufcodcbirmj0" path="res://script/colonne_boutique.gd" id="1_af8bt"]
+[ext_resource type="Script" uid="uid://bn5qm301cnlaq" path="res://script/layout.gd" id="1_y8mbx"]
+[ext_resource type="PackedScene" uid="uid://bovmyajphhsk5" path="res://scene/peintureRupestre.tscn" id="2_0d1mt"]
+[ext_resource type="PackedScene" uid="uid://crhb5xhtb14n6" path="res://scene/ecriture.tscn" id="3_84g5y"]
+[ext_resource type="PackedScene" uid="uid://bhou7g8hd75uc" path="res://scene/cryptographie.tscn" id="4_af8bt"]
+[ext_resource type="PackedScene" uid="uid://cwl1n74yayrqk" path="res://scene/imprimerie.tscn" id="5_g68dg"]
+[ext_resource type="PackedScene" uid="uid://cqdonep4kjc8a" path="res://scene/morseCode.tscn" id="6_gamci"]
+[ext_resource type="PackedScene" uid="uid://c74x8qa4ad3cn" path="res://scene/television.tscn" id="7_ebmpt"]
+[ext_resource type="PackedScene" uid="uid://40nedjkfwyd8" path="res://scene/internet.tscn" id="8_a6idq"]
+
+[node name="colonneBoutique" type="VBoxContainer"]
+anchors_preset = -1
+anchor_right = 0.501736
+anchor_bottom = 1.01543
+size_flags_horizontal = 4
+alignment = 1
+script = ExtResource("1_af8bt")
+metadata/_edit_use_anchors_ = true
+
+[node name="boutique" type="Label" parent="."]
+layout_mode = 2
+text = "boutique"
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="."]
+layout_mode = 2
+
+[node name="objets" type="VBoxContainer" parent="."]
+layout_mode = 2
+script = ExtResource("1_y8mbx")
+
+[node name="HBoxContainer" parent="objets" instance=ExtResource("2_0d1mt")]
+layout_mode = 2
+
+[node name="HSeparator" type="HSeparator" parent="objets"]
+layout_mode = 2
+
+[node name="HBoxContainer2" parent="objets" instance=ExtResource("3_84g5y")]
+layout_mode = 2
+
+[node name="HSeparator2" type="HSeparator" parent="objets"]
+layout_mode = 2
+
+[node name="HBoxContainer3" parent="objets" instance=ExtResource("4_af8bt")]
+layout_mode = 2
+
+[node name="HSeparator3" type="HSeparator" parent="objets"]
+layout_mode = 2
+
+[node name="HBoxContainer4" parent="objets" instance=ExtResource("5_g68dg")]
+layout_mode = 2
+
+[node name="HSeparator4" type="HSeparator" parent="objets"]
+layout_mode = 2
+
+[node name="HBoxContainer5" parent="objets" instance=ExtResource("6_gamci")]
+layout_mode = 2
+
+[node name="HSeparator5" type="HSeparator" parent="objets"]
+layout_mode = 2
+
+[node name="HBoxContainer6" parent="objets" instance=ExtResource("7_ebmpt")]
+layout_mode = 2
+
+[node name="HSeparator6" type="HSeparator" parent="objets"]
+layout_mode = 2
+
+[node name="HBoxContainer7" parent="objets" instance=ExtResource("8_a6idq")]
+layout_mode = 2
+
+[connection signal="estBuyPeint" from="objets/HBoxContainer" to="." method="_on_h_box_container_est_buy_peint"]

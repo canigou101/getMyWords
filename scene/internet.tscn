@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://40nedjkfwyd8"]
+
+[node name="HBoxContainer" type="HBoxContainer"]
+offset_right = 40.0
+offset_bottom = 40.0
+size_flags_horizontal = 0
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 2
+disabled = true
+text = "buy"
+
+[node name="Label" type="Label" parent="."]
+custom_minimum_size = Vector2(320, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 10
+text = "Internet (démocratisé dans les années 1990)
+Relie la planète entière, rendant l’information, le commerce et les interactions sociales quasi instantanés et mondiaux."
+vertical_alignment = 1
+autowrap_mode = 3
+text_direction = 1
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+text = "X0"
+horizontal_alignment = 2

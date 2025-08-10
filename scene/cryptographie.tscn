@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://bhou7g8hd75uc"]
+
+[node name="HBoxContainer" type="HBoxContainer"]
+offset_right = 40.0
+offset_bottom = 40.0
+size_flags_horizontal = 0
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 2
+disabled = true
+text = "buy"
+
+[node name="Label" type="Label" parent="."]
+custom_minimum_size = Vector2(320, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 10
+text = "Cryptographie
+Protège les messages dans les échanges politiques et militaires, change la nature de la communication stratégique."
+vertical_alignment = 1
+autowrap_mode = 3
+text_direction = 1
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+text = "X0"
+horizontal_alignment = 2

@@ -2,7 +2,7 @@ extends HBoxContainer
 
 signal estBuyPeint(prix)
 
-var argent=10
+var argent=0
 var prix=5
 
 func pasDargent():

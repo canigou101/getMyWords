@@ -2,7 +2,7 @@ extends Control
 
 var NbPoints=0
 var MultiplicateurDePoints=1
-var addCPS=0
+var clicPC=0
 
 func actualiserCompteur():
 	%colonneMain.afficherNombre(NbPoints)
@@ -14,7 +14,7 @@ func _on_colonne_main_is_press():
 
 
 func _on_timer_timeout():
-	NbPoints+=addCPS
+	NbPoints+=clicPC
 	%colonneBoutique.updatethune(NbPoints)
 	actualiserCompteur()
 
@@ -23,6 +23,5 @@ func _on_colonne_boutique_prix_minus(prix):
 	NbPoints-=prix
 
 
-func _on_colonne_boutique_liste(dict):
-	for valeur in dict.values():
-		addCPS+=valeur
+func _on_colonne_boutique_addcpsp(x):
+	clicPC=x

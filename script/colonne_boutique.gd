@@ -1,6 +1,6 @@
 extends VBoxContainer
 
-signal liste(dict)
+signal addcpsp(x)
 signal prixMinus(prix)
 var dic={"peinture":0,"ecriture":0,"crypto":0,"imprimerie":0,"morse":0,"tele":0,"internet":0}
 
@@ -14,4 +14,11 @@ func updatethune(arg):
 
 
 func _on_timer_timeout():
-	liste.emit(dic)
+	var x= addcps(dic)
+	addcpsp.emit(x)
+
+func addcps(dic):
+	var x=0
+	for v in dic.values():
+		x+=v
+	return x

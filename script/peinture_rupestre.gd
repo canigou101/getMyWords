@@ -19,18 +19,13 @@ func actualiserCompte(compte):
 func _on_button_pressed():
 	estBuyPeint.emit(prix)
 	prix=int(prix*1.2)
-	resetButton()
+	$Button.disabled=true
 	afficher_Prix()
 	
 	
 func afficher_Prix():
 	var string2="Prix :"+str(prix)
 	$prix.text=string2
-
-func resetButton():
-	$Button.disabled=true
-	$Timer.start()
-	
 
 func _ready():
 	afficher_Prix()

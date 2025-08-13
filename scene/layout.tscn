@@ -55,6 +55,7 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="Timer" type="Timer" parent="."]
+wait_time = 0.5
 autostart = true
 
 [connection signal="addcpsp" from="VBoxContainer/HBoxContainer/colonneBoutique" to="." method="_on_colonne_boutique_addcpsp"]
